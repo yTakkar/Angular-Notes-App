@@ -1,0 +1,221 @@
+$a: #2895F1;
+$family: 'Open Sans', 'Roboto', Tahoma, arial, sans-serif;
+$dark: #1b2733;
+$fb: #fbfbfb;
+$ff: #fff;
+$ee: #eee;
+$pric: #1b9be9;
+$d_light: #66757f;
+$header: #f9f9f9;
+$header_border: #f7f5f5;
+$second_border: #f7f9fa;
+$third-border: #f6f7f9;
+
+@mixin center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin modal-shadow{
+  box-shadow: 0 0 18px rgba(27,31,35,0.4);
+  -webkit-box-shadow: 0 0 18px rgba(27,31,35,0.4);
+  -moz-box-shadow: 0 0 18px rgba(27,31,35,0.4);
+}
+
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+body{
+  font-family: $family;
+  background: $fb;
+  font-size: 13px;
+  color: #3d464d;
+  font-weight: normal;
+}
+
+a{
+  text-decoration: none;
+  color: $a;
+  outline: none;
+}
+
+.a_disabled{
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  background: #6ab9e8 !important;
+}
+
+.sec_btn_disabled{
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  color: #d8c3c3 !important;
+}
+
+input[type="text"],input[type="email"],input[type="password"],textarea{
+  border: 1px solid $ee;
+  border-radius: 4px;
+  font-family: $family;
+  color: #0b867a;
+  outline: none;
+  padding: 5px 5px;
+}
+
+input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner{
+  padding: 0 !important;
+  border: 0 none !important;
+}
+
+textarea{
+  word-break: break-all;
+  font-size: 13px;
+}
+
+input[type="text"]:focus,input[type="password"]:focus, input[type="email"]:focus, textarea:focus{
+  border: 1px solid #56b4ef !important;
+  box-shadow: 0px 0px 5px 1px #c8def0;
+}
+
+input[type="submit"],input[type="button"],.pri_btn{
+  font-weight: 600;
+  background: $pric;
+  border: 1px solid $pric;
+  color: $ff;;
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+  &:hover{ opacity: .9; }
+  &:focus{ background: #198bd0; }
+}
+
+input[type="submit"]:disabled, input[type="button"]:disabled{
+  background: #6ab9e8 !important;
+  cursor: auto !important;
+  &:hover{ opacity: 1 !important; }
+}
+
+.sec_btn{
+  border: 1px solid $ee;
+  background: $fb;
+  color: $dark;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 600;
+  outline: none;
+  &:hover{
+    color: $dark;
+    background-color: #fff7f7;
+  }
+  &:focus{
+    color: $dark;
+    background: #f7ebeb;
+  }
+}
+
+.overlay{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: #000;
+  opacity: 0.5 !important;
+  z-index: 1;
+}
+
+.hidden_overlay{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: transparent !important;
+  z-index: 2;
+}
+
+.handy-notify{
+  position: fixed;
+  background: #333;
+  left: 2%;
+  color: $ff;
+  border-radius: 3px;
+  padding: 12px 80px 12px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: left;
+  z-index: 3;
+  top: 105%;
+}
+
+.home_last_mssg{
+  position: relative;
+  border-radius: 4px;
+  background:$ff;
+  border: 1px solid $header_border;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+  cursor: default;
+  & img{
+    position: relative;
+    text-align: center;
+    width: 150px;
+    display: block;
+    left: 48%;
+    transform: translate(-50%);
+  }
+  & span{
+    position: relative;
+    text-align: center;
+    display: block;
+    left: -5px;
+  }
+}
+
+.modal{
+  @include center;
+  position: fixed !important;
+  @include modal-shadow;
+  width: 300px;
+  border-radius: 3px;
+  z-index: 2;
+  background: $ff;
+  font-size: 14px;
+  & .modal_no{
+    text-align: center;
+    position: relative;
+    top: 30px;
+    & img{ width: 150px; }
+  }
+  & .modal_header{
+    background: $header;
+    border-bottom: 1px solid $header_border;
+    padding: 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    & span.title{ font-weight: 600; }
+  }
+  & .modal_middle{
+    position: relative;
+    padding: 10px;
+  }
+  & .modal_bottom{
+    display: block;
+    text-align: right;
+    padding: 9px 5px 12px 5px;
+    border-top: 1px solid $ee;
+    margin-top: 0px;
+    & a, & input[type='submit']{
+      display: inline-block;
+      padding: 4px 10px;
+      font-weight: 600;
+    }
+  }
+}

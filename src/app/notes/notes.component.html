@@ -1,0 +1,23 @@
+<div class="home">
+
+  <div class="home_info">
+    <span>{{ notes.length }} Notes</span>
+    <a href="#" class="pri_btn" (click)="_Toggle($event)" >Create note</a>
+  </div>
+
+  <app-nothing *ngIf="notes.length == 0" ></app-nothing>
+  <app-note [notes]="notes" *ngIf="notes.length > 0" ></app-note>
+  <app-end *ngIf="notes.length > 0" ></app-end>
+
+  <app-overlay
+    [visible]="true"
+    *ngIf="create" >
+  </app-overlay>
+
+  <app-create-note
+    *ngIf="create"
+    (onBack)="_Toggle($event)"
+    (onCreateNote)="createNote($event)" >
+  </app-create-note>
+
+</div>

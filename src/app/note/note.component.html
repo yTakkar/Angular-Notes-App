@@ -1,0 +1,17 @@
+<div>
+  <div class="note" *ngFor="let note of notes" >
+    <div class="note_header common_header">
+      <img src='assets/angular.png' alt='' />
+      <div class="note_h_left">
+        <span class="note_username">You</span>
+        <span class='note_time'>{{ note.time | timeago }}</span>
+      </div>
+    </div>
+    <div class="note_title">
+      <span>{{ note.title }}</span>
+    </div>
+    <div class="note_content">
+      <span>{{ note.content }}</span>
+    </div>
+  </div>
+</div>

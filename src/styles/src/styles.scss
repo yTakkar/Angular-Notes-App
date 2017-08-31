@@ -1,0 +1,106 @@
+@import 'defaults';
+
+.notes_wrapper{
+  margin-top: 70px;
+}
+
+.note{
+  background: $ff;
+  padding: 10px;
+  display: block;
+  font-size: 14px;
+  border: 1px solid $header_border;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  &:hover{ border-color: $ee; }
+  & .note_header{
+    margin-bottom: 7px;
+    & img{
+      height: 31px;
+      width: 31px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    & .note_h_left{
+      display: inline-block;
+      margin-left: 5px;
+      width: 90%;
+      & .note_username{
+        display: block;
+        color: $dark;
+        font-weight: 600;
+        position: relative;
+        top: 2px;
+      }
+      & .note_time{
+        font-size: 13px;
+        color: $d_light;
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+  & .note_title, & .note_content{ color: $dark; }
+  & .note_title{
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+}
+
+.create_note{
+  width: 380px;
+  & input[type='text'], & textarea{
+      padding: 7px !important;
+      width: 94%;
+      font-size: 14px;
+  }
+  & input[type="text"]{ margin-bottom: 9px; }
+  & textarea{ height: 250px; }
+  & .c_n_bottom{
+    margin-top: 1px;
+    & input[type='submit']{
+      margin-left: 5px;
+      padding: 5px 10px;
+      margin-right: 6px;
+      font-size: 14px;
+    }
+  }
+}
+
+.content_editor{
+  margin-top: 5px;
+}
+
+.page_end{
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  color: $d_light;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid $fb;
+  &:hover{ border: 1px solid $ee; }
+}
+
+.home{
+  position: relative;
+  width: 607px;
+  margin-left: 365px;
+  margin-bottom: 60px;
+  & .home_info{
+    margin-bottom: 10px;
+    background: $ff;
+    padding: 14px 10px;
+    border: 1px solid $header_border;
+    border-radius: 3px;
+    font-size: 15px;
+    & a{
+      position: absolute;
+      right: 10px;
+      padding: 4px 12px;
+      top: 10px;
+    }
+  }
+}
