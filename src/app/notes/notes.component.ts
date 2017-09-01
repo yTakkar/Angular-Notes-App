@@ -9,7 +9,7 @@ import Notes from '../notes.data';
 
 export class NotesComponent implements OnInit {
 
-  notes = Notes;
+  notes: Array<Object> = Notes;
 
   create: Boolean = false;
 
@@ -19,7 +19,7 @@ export class NotesComponent implements OnInit {
 
   createNote(e) {
     const
-      time = new Date().getTime(),
+      time: Number = new Date().getTime(),
       { title, content } = e;
 
     this.notes.unshift({

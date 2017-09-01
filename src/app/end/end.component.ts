@@ -8,7 +8,7 @@ import $ from 'jquery';
 
 export class EndComponent implements OnInit {
 
-  mssg = 'Looks like you\'ve reached the end';
+  mssg: String = 'Looks like you\'ve reached the end';
 
   ToTop() {
     $('html, body').animate({ scrollTop: 0 }, 450);

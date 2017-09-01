@@ -17,7 +17,7 @@ export class CreateNoteComponent implements OnInit {
 
   createNote(e) {
     e.preventDefault();
-    const obj = {
+    const obj: Object = {
       title: $('.n_title').val(),
       content: $('.n_content').val()
     };
