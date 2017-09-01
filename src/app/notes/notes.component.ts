@@ -14,6 +14,7 @@ export class NotesComponent implements OnInit {
   create: Boolean = false;
 
   _Toggle(e) {
+    e.preventDefault();
     this.create = !this.create;
   }
 
