@@ -1,0 +1,22 @@
+<div>
+  <div class='view_note modal'>
+    <div class="v_n_header modal_header">
+      <span class='title'>View note</span>
+    </div>
+    <div class="v_n_middle modal_middle">
+      <div class="v_n_info">
+        <img src='assets/angular.png' alt="" />
+        <div class="v_n_left">
+          <span class='v_n_username'>You</span>
+          <span class="v_n_time">{{ note.time | timeago }}</span>
+        </div>
+      </div>
+      <span class='v_n_title'  spellCheck='false'>{{ note.title }}</span>
+      <span class='v_n_content' spellCheck='false'>{{ note.content }}</span>
+    </div>
+    <div class="v_n_bottom modal_bottom">
+      <a href="#" class='v_n_delete sec_btn' (click)="deleteNote($event)" >Delete Note</a>
+      <a href='#' class='v_n_cancel pri_btn' (click)="doneViewing($event)" >Done</a>
+    </div>
+  </div>
+</div>

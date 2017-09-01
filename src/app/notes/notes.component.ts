@@ -9,7 +9,7 @@ import Notes from '../notes.data';
 
 export class NotesComponent implements OnInit {
 
-  notes: Array<Object> = Notes;
+  notes = Notes;
 
   create: Boolean = false;
 
@@ -20,7 +20,7 @@ export class NotesComponent implements OnInit {
 
   createNote(e) {
     const
-      time: Number = new Date().getTime(),
+      time: number = new Date().getTime(),
       { title, content } = e;
 
     this.notes.unshift({
@@ -32,6 +32,11 @@ export class NotesComponent implements OnInit {
 
     this.create = false;
     Notify({ value: 'Note Created!!' });
+  }
+
+  deleteNote(e) {
+    const f = this.notes.filter(el => el.id !== e );
+    this.notes = f;
   }
 
   constructor() { }

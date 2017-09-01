@@ -9,6 +9,7 @@ import { EndComponent } from './end/end.component';
 import { CreateNoteComponent } from './create-note/create-note.component';
 import { OverlayComponent } from './overlay/overlay.component';
 import { TimeagoPipe } from './timeago.pipe';
+import { ViewNoteComponent } from './view-note/view-note.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TimeagoPipe } from './timeago.pipe';
     EndComponent,
     CreateNoteComponent,
     OverlayComponent,
-    TimeagoPipe
+    TimeagoPipe,
+    ViewNoteComponent
   ],
   imports: [
     BrowserModule

@@ -1,5 +1,6 @@
 <div>
-  <div class="note" *ngFor="let note of notes" >
+
+  <div class="note" (click)="view_note($event)" >
     <div class="note_header common_header">
       <img src='assets/angular.png' alt='' />
       <div class="note_h_left">
@@ -14,4 +15,17 @@
       <span>{{ note.content }}</span>
     </div>
   </div>
+
+  <app-overlay
+    [visible]="true"
+    *ngIf="viewNote"
+  ></app-overlay>
+
+  <app-view-note
+    *ngIf="viewNote"
+    [note]="note"
+    (onView)="view_note($event)"
+    (onDelete)="delete_note($event)"
+  ></app-view-note>
+
 </div>

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class NothingComponent implements OnInit {
 
-  mssg: String = 'Hello, a message for you!!';
+  mssg: String = 'No notes for you, go ahead and create one!!';
 
   constructor() { }
 

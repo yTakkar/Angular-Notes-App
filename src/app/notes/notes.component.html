@@ -6,7 +6,14 @@
   </div>
 
   <app-nothing *ngIf="notes.length == 0" ></app-nothing>
-  <app-note [notes]="notes" *ngIf="notes.length > 0" ></app-note>
+
+  <div *ngFor="let note of notes" >
+    <app-note
+      [note]="note"
+      (onDelete)="deleteNote($event)"
+    ></app-note>
+  </div>
+
   <app-end *ngIf="notes.length > 0" ></app-end>
 
   <app-overlay

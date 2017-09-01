@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-note',
@@ -7,7 +7,19 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class NoteComponent implements OnInit {
 
-  @Input() notes;
+  @Input() note;
+  @Output() onDelete = new EventEmitter();
+
+  viewNote: Boolean = false;
+
+  view_note(e) {
+    e.preventDefault();
+    this.viewNote = !this.viewNote;
+  }
+
+  delete_note(e) {
+    this.onDelete.emit(e);
+  }
 
   constructor() { }
 

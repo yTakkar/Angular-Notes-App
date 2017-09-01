@@ -1,4 +1,14 @@
-const notes: Array<Object> = [
+interface NInterface {
+  id: number;
+  time: number;
+  title: string;
+  content: string;
+}
+
+// tslint:disable-next-line:no-empty-interface
+interface NotesInterface extends Array<NInterface> {}
+
+const notes: NotesInterface = [
   {
     id: 1,
     time: 1504176630103,
